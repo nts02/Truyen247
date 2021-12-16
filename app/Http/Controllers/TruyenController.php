@@ -45,6 +45,7 @@ class TruyenController extends Controller
                 'hinhanh'=>'required|image|mimes:jpg,png,jpeg,gif,svg|max:2048|
                             dimensions:min_width=100,min_height=100,max_width=1400,max_height=1400',
                 'tomtat' => 'required',
+                'tacgia' => 'required',
                 'kichhoat'=> 'required',
                 'danhmuc'=> 'required'
             ],
@@ -52,7 +53,8 @@ class TruyenController extends Controller
                 'slug_truyen.unique' => 'Slug đã tồn tại.Vui lòng chọn tên khác!!!',
                 'tentruyen.unique' => 'Tên truyện đã tồn tại.Vui lòng chọn tên khác!!!',
                 'tentruyen.required' => 'Tên truyện đang để trống',
-                'tomtat.required' => 'Mô tả đang để trống',
+                'tomtat.required' => 'Tóm tắt đang để trống',
+                'tacgia.required' => 'Tác giả đang để trống',
                 'slug_truyen.required'=>'Thiếu slug truyện',
                 'hinhanh.required'=> 'Thiếu ảnh minh hoạ'
             ]
@@ -61,6 +63,7 @@ class TruyenController extends Controller
         $truyen->tentruyen = $data['tentruyen'];
         $truyen->slug_truyen = $data['slug_truyen'];
         $truyen->tomtat = $data['tomtat'];
+        $truyen->tacgia = $data['tacgia'];
         $truyen->kichhoat = $data['kichhoat'];
         $truyen->danhmuc_id = $data['danhmuc'];
 
@@ -115,6 +118,7 @@ class TruyenController extends Controller
                 'tentruyen' => 'required|max:255',
                 'slug_truyen' => 'required|max:255',
                 'tomtat' => 'required',
+                'tacgia'=> 'required',
                 'kichhoat'=> 'required',
                 'danhmuc'=> 'required'
             ],
@@ -122,12 +126,14 @@ class TruyenController extends Controller
                 'tentruyen.required' => 'Tên truyện đang để trống',
                 'tomtat.required' => 'Mô tả đang để trống',
                 'slug_truyen.required'=>'Thiếu slug truyện',
+                'tacgia.required' => 'Tác giả đang để trống',
             ]
         );
         $truyen = Truyen::find($id);
         $truyen->tentruyen = $data['tentruyen'];
         $truyen->slug_truyen = $data['slug_truyen'];
         $truyen->tomtat = $data['tomtat'];
+        $truyen->tacgia = $data['tacgia'];
         $truyen->kichhoat = $data['kichhoat'];
         $truyen->danhmuc_id = $data['danhmuc'];
 

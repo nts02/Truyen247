@@ -11,8 +11,12 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
     <link rel="stylesheet" href="{{ asset('css/owl.carousel.min.css') }}">
     <link rel="stylesheet" href="{{ asset('css/owl.theme.default.min.css') }}">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"  crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"  crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"  crossorigin="anonymous"></script>
 </head>
 <body>
 <div class="container">
@@ -21,15 +25,20 @@
         <div class="collapse navbar-collapse justify-content-between" id="navbarSupportedContent">
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item active">
-                    <a class="nav-link" href="#" style="color: #0a53be">
+                    <a class="nav-link" href="{{url('/')}}">
                         Trang chủ <span class="sr-only"></span>
                     </a>
                 </li>
                 <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
-                       data-toggle="dropdown" aria-expanded="false">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+                       aria-haspopup="true" aria-expanded="false">
                         Thể loại
                     </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        @foreach($danhmuc as $key => $danh)
+                         <a class="dropdown-item" href="{{url('danh-muc/'.$danh->slug_danhmuc)}}">{{$danh->tendanhmuc}}</a>
+                        @endforeach
+                    </div>
                 </li>
             </ul>
             <form class="form-inline ml-auto my-2 my-lg-0 d-flex ">
@@ -38,197 +47,136 @@
             </form>
         </div>
     </nav>
+
     <!-- SLIDE -->
-    <h3 style="color: #a52834">Truyện hay</h3>
-    <div class="owl-carousel owl-theme" style="padding-bottom: 56px">
-        <div class="item">
-            <img src="{{asset('public/uploads/truyen/3003.jpg')}}" style="width: 200px;height: 300px"><br>
-            <h4>Nhất kiếm độc tôn</h4>
-            <div class="btn-group">
-                <a href="#" type="button" class="btn btn-sm btn-outline-secondary">Đọc truyện</a>
-                <a type="button" class="btn btn-sm btn-danger"><i class="fas fa-eye"></i> 4069</a>
-            </div>
-        </div>
-        <div class="item">
-            <img src="{{asset('public/uploads/truyen/3003.jpg')}}" style="width: 200px;height: 300px"><br>
-            <h4>Nhất kiếm độc tôn</h4>
-            <div class="btn-group">
-                <a href="#" type="button" class="btn btn-sm btn-outline-secondary">Đọc truyện</a>
-                <a type="button" class="btn btn-sm btn-danger"><i class="fas fa-eye"></i> 4069</a>
-            </div>
-        </div>
-        <div class="item">
-            <img src="{{asset('public/uploads/truyen/3003.jpg')}}" style="width: 200px;height: 300px"><br>
-            <h4>Nhất kiếm độc tôn</h4>
-            <div class="btn-group">
-                <a href="#" type="button" class="btn btn-sm btn-outline-secondary">Đọc truyện</a>
-                <a type="button" class="btn btn-sm btn-danger"><i class="fas fa-eye"></i> 4069</a>
-            </div>
-        </div>
-        <div class="item">
-            <img src="{{asset('public/uploads/truyen/3003.jpg')}}" style="width: 200px;height: 300px"><br>
-            <h4>Nhất kiếm độc tôn</h4>
-            <div class="btn-group">
-                <a href="#" type="button" class="btn btn-sm btn-outline-secondary">Đọc truyện</a>
-                <a type="button" class="btn btn-sm btn-danger"><i class="fas fa-eye"></i> 4069</a>
-            </div>
-        </div>
-        <div class="item">
-            <img src="{{asset('public/uploads/truyen/3003.jpg')}}" style="width: 200px;height: 300px"><br>
-            <h4>Nhất kiếm độc tôn</h4>
-            <div class="btn-group">
-                <a href="#" type="button" class="btn btn-sm btn-outline-secondary">Đọc truyện</a>
-                <a type="button" class="btn btn-sm btn-danger"><i class="fas fa-eye"></i> 4069</a>
-            </div>
-        </div>
-    </div>
-
+    @yield('slide')
     <!--Truyện mới cập nhật -->
-    <h3 style="color:#a52834;">Truyện mới cập nhật</h3>
-    <div class="album py-5 bg-light">
-        <div class="container">
-            <div class="row ">
-                <div class="col-md-3">
-                    <div class="card mb-3 shadow-sm">
-                        <img src="{{asset('public/uploads/truyen/3003.jpg')}}" alt="">
-                        <div class="card-body">
-                            <h3>This is a wider card with supporting text</h3>
-                            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                            <div class="d-flex justify-content-between align-items-center">
-                                <div class="btn-group">
-                                    <a href="#" type="button" class="btn btn-sm btn-outline-secondary">Đọc truyện</a>
-                                    <a type="button" class="btn btn-sm btn-outline-secondary"><i class="fas fa-eye"></i> 4069</a>
-                                </div>
-                                <small class="text-muted">9 mins ago</small>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-3">
-                    <div class="card mb-3 shadow-sm">
-                        <img src="{{asset('public/uploads/truyen/3003.jpg')}}" alt="">
-                        <div class="card-body">
-                            <h3>This is a wider card with supporting text</h3>
-                            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                            <div class="d-flex justify-content-between align-items-center">
-                                <div class="btn-group">
-                                    <a href="#" type="button" class="btn btn-sm btn-outline-secondary">Đọc truyện</a>
-                                    <a type="button" class="btn btn-sm btn-outline-secondary"><i class="fas fa-eye"></i> 4069</a>
-                                </div>
-                                <small class="text-muted">9 mins ago</small>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-3">
-                    <div class="card mb-3 shadow-sm">
-                        <img src="{{asset('public/uploads/truyen/3003.jpg')}}" alt="">
-                        <div class="card-body">
-                            <h3>This is a wider card with supporting text</h3>
-                            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                            <div class="d-flex justify-content-between align-items-center">
-                                <div class="btn-group">
-                                    <a href="#" type="button" class="btn btn-sm btn-outline-secondary">Đọc truyện</a>
-                                    <a type="button" class="btn btn-sm btn-outline-secondary"><i class="fas fa-eye"></i> 4069</a>
-                                </div>
-                                <small class="text-muted">9 mins ago</small>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-3">
-                    <div class="card mb-3 shadow-sm">
-                        <img src="{{asset('public/uploads/truyen/3003.jpg')}}" alt="">
-                        <div class="card-body">
-                            <h3>This is a wider card with supporting text</h3>
-                            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                            <div class="d-flex justify-content-between align-items-center">
-                                <div class="btn-group">
-                                    <a href="#" type="button" class="btn btn-sm btn-outline-secondary">Đọc truyện</a>
-                                    <a type="button" class="btn btn-sm btn-outline-secondary"><i class="fas fa-eye"></i> 4069</a>
-                                </div>
-                                <small class="text-muted">9 mins ago</small>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
 
-        </div>
-    </div>
     <!--Đọc nhiều-->
-    <h3 style="color:#a52834;">Truyện được đọc nhiều</h3>
-    <div class="album py-5 bg-light">
-        <div class="container">
-            <div class="row ">
-                <div class="col-md-3">
-                    <div class="card mb-3 shadow-sm">
-                        <img src="{{asset('public/uploads/truyen/3003.jpg')}}" alt="">
-                        <div class="card-body">
-                            <h3>This is a wider card with supporting text</h3>
-                            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                            <div class="d-flex justify-content-between align-items-center">
-                                <div class="btn-group">
-                                    <a href="#" type="button" class="btn btn-sm btn-outline-secondary">Đọc truyện</a>
-                                    <a type="button" class="btn btn-sm btn-outline-secondary"><i class="fas fa-eye"></i> 4069</a>
-                                </div>
-                                <small class="text-muted">9 mins ago</small>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-3">
-                    <div class="card mb-3 shadow-sm">
-                        <img src="{{asset('public/uploads/truyen/3003.jpg')}}" alt="">
-                        <div class="card-body">
-                            <h3>This is a wider card with supporting text</h3>
-                            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                            <div class="d-flex justify-content-between align-items-center">
-                                <div class="btn-group">
-                                    <a href="#" type="button" class="btn btn-sm btn-outline-secondary">Đọc truyện</a>
-                                    <a type="button" class="btn btn-sm btn-outline-secondary"><i class="fas fa-eye"></i> 4069</a>
-                                </div>
-                                <small class="text-muted">9 mins ago</small>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-3">
-                    <div class="card mb-3 shadow-sm">
-                        <img src="{{asset('public/uploads/truyen/3003.jpg')}}" alt="">
-                        <div class="card-body">
-                            <h3>This is a wider card with supporting text</h3>
-                            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                            <div class="d-flex justify-content-between align-items-center">
-                                <div class="btn-group">
-                                    <a href="#" type="button" class="btn btn-sm btn-outline-secondary">Đọc truyện</a>
-                                    <a type="button" class="btn btn-sm btn-outline-secondary"><i class="fas fa-eye"></i> 4069</a>
-                                </div>
-                                <small class="text-muted">9 mins ago</small>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-3">
-                    <div class="card mb-3 shadow-sm">
-                        <img src="{{asset('public/uploads/truyen/3003.jpg')}}" alt="">
-                        <div class="card-body">
-                            <h3>This is a wider card with supporting text</h3>
-                            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                            <div class="d-flex justify-content-between align-items-center">
-                                <div class="btn-group">
-                                    <a href="#" type="button" class="btn btn-sm btn-outline-secondary">Đọc truyện</a>
-                                    <a type="button" class="btn btn-sm btn-outline-secondary"><i class="fas fa-eye"></i> 4069</a>
-                                </div>
-                                <small class="text-muted">9 mins ago</small>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+    @yield('content')
 
+
+    <!-- Footer -->
+    <footer class="text-center text-lg-start bg-light text-muted">
+        <!-- Section: Social media -->
+        <section
+            class="d-flex justify-content-center justify-content-lg-between p-4 border-bottom"
+        >
+            <!-- Left -->
+            <div class="me-5 d-none d-lg-block">
+                <span>Get connected with us on social networks:</span>
+            </div>
+            <!-- Left -->
+
+            <!-- Right -->
+            <div>
+                <a href="https://www.facebook.com/thais0n" class="me-4 text-reset">
+                    <i class="fab fa-facebook-f"></i>
+                </a>
+                <a href="" class="me-4 text-reset">
+                    <i class="fab fa-twitter"></i>
+                </a>
+                <a href="" class="me-4 text-reset">
+                    <i class="fab fa-google"></i>
+                </a>
+                <a href="https://www.instagram.com/n_thaison16/" class="me-4 text-reset">
+                    <i class="fab fa-instagram"></i>
+                </a>
+                <a href="https://github.com/nts02" class="me-4 text-reset">
+                    <i class="fab fa-github"></i>
+                </a>
+            </div>
+            <!-- Right -->
+        </section>
+        <!-- Section: Social media -->
+
+        <!-- Section: Links  -->
+        <section class="">
+            <div class="container text-center text-md-start mt-5">
+                <!-- Grid row -->
+                <div class="row mt-3">
+                    <!-- Grid column -->
+                    <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
+                        <!-- Content -->
+                        <h6 class="text-uppercase fw-bold mb-4">
+                            <i class="fas fa-gem me-3"></i>Thái Sơn
+                        </h6>
+                        <p>
+                            Website đọc truyện trực tuyến
+                        </p>
+                    </div>
+                    <!-- Grid column -->
+
+                    <!-- Grid column -->
+                    <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
+                        <!-- Links -->
+                        <h6 class="text-uppercase fw-bold mb-4">
+                            Products
+                        </h6>
+                        <p>
+                            <a href="#!" class="text-reset">HTML/CSS</a>
+                        </p>
+                        <p>
+                            <a href="#!" class="text-reset">Bootstrap4</a>
+                        </p>
+                        <p>
+                             <a href="" class="text-reset">Javascript</a>
+                        </p>
+                        <p>
+                            <a href="#!" class="text-reset">Laravel</a>
+                        </p>
+                    </div>
+                    <!-- Grid column -->
+
+                    <!-- Grid column -->
+                    <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
+                        <!-- Links -->
+                        <h6 class="text-uppercase fw-bold mb-4">
+                            Useful links
+                        </h6>
+                        <p>
+                            <a href="#!" class="text-reset">Pricing</a>
+                        </p>
+                        <p>
+                            <a href="#!" class="text-reset">Settings</a>
+                        </p>
+                        <p>
+                            <a href="#!" class="text-reset">Orders</a>
+                        </p>
+                        <p>
+                            <a href="#!" class="text-reset">Help</a>
+                        </p>
+                    </div>
+                    <!-- Grid column -->
+
+                    <!-- Grid column -->
+                    <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
+                        <!-- Links -->
+                        <h6 class="text-uppercase fw-bold mb-4">
+                            Contact
+                        </h6>
+                        <p><i class="fas fa-home me-3"></i> Thái Bình, VIETNAM</p>
+                        <p>
+                            <i class="fas fa-envelope me-3"></i>
+                            sonthai.ptit@gmail.com
+                        </p>
+                        <p><i class="fas fa-phone me-3"></i> + 84 983 991 820</p>
+                    </div>
+                    <!-- Grid column -->
+                </div>
+                <!-- Grid row -->
+            </div>
+        </section>
+        <!-- Section: Links  -->
+
+        <!-- Copyright -->
+        <div class="text-center p-4" style="background-color: rgba(0, 0, 0, 0.05);">
+            © 2021 Copyright:
+            <a class="text-reset fw-bold" href="https://mdbootstrap.com/">MDBootstrap.com</a>
         </div>
-    </div>
+        <!-- Copyright -->
+    </footer>
+    <!-- Footer -->
 </div>
 
 
@@ -252,6 +200,20 @@
             }
         }
     })
+</script>
+<script>
+    $('.select-chapter').on('change',function (){
+        var url = $(this).val();
+        if(url){
+            window.location = url;
+        }
+        return false;
+    });
+    current_chapter();
+    function  current_chapter() {
+        var url = window.location.href;
+        $('.select-chapter').find('option[value="'+url +'"]').attr("selected",true);
+    }
 </script>
 </body>
 </html>

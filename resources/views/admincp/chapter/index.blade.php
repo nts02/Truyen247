@@ -18,6 +18,7 @@
                             <thead>
                                 <tr>
                                     <th scope="col">#</th>
+                                    <th scope="col">Truyện ID</th>
                                     <th scope="col">Tên chương</th>
                                     <th scope="col">Slug</th>
                                     <th scope="col">Kích hoạt</th>
@@ -28,6 +29,7 @@
                             @foreach($chapter as $key => $ct)
                                 <tr>
                                     <th scope="row">{{$key}}</th>
+                                    <td>{{$ct->truyen_id}}</td>
                                     <td>{{$ct->tieude}}</td>
                                     <td>{{$ct->slug_chapter}}</td>
 

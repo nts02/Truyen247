@@ -30,6 +30,11 @@
                                        value="{{old('tentruyen')}}" class="form-control"  placeholder="Tên truyện...">
                             </div>
                             <div class="form-group">
+                                <label for="">Tác giả</label>
+                                <input type="text" name="tacgia" value="{{old('tacgia')}}"
+                                       class="form-control"  placeholder="Tên tác giả">
+                            </div>
+                            <div class="form-group">
                                 <label for="">Slug</label>
                                 <input type="text" name="slug_truyen" id="convert_slug"
                                        value="{{old('slug_truyen')}}" class="form-control"  placeholder="Slug">

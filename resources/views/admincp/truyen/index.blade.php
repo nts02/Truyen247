@@ -21,7 +21,7 @@
                                 <th scope="col">Tên truyện</th>
                                 <th scope="col">Ảnh minh hoạ</th>
                                 <th scope="col">Slug</th>
-                                <th scope="col">Tóm tắt</th>
+
                                 <th scope="col">Thể loại</th>
                                 <th scope="col">Kích hoạt</th>
                                 <th scope="col">Quản lý</th>
@@ -34,7 +34,7 @@
                                     <td>{{$truyen->tentruyen}}</td>
                                     <td><img src="{{asset('public/uploads/truyen/'.$truyen->hinhanh)}}" height="200" width="120"></td>
                                     <td>{{$truyen->slug_truyen}}</td>
-                                    <td>{{$truyen->tomtat}}</td>
+
                                     <td>{{$truyen->danhmuctruyen->tendanhmuc}}</td>
                                     <td>
                                         @if($truyen->kichhoat == 0)

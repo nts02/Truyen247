@@ -10,7 +10,7 @@ class Chapter extends Model
     use HasFactory;
     public $timestamps = false; // không tạo col created_at && updated_at
     protected $fillable = [
-        'truyen_id','tomtat','kichhoat','tieude','noidung','slug_chapter'
+        'truyen_id','tomtat','kichhoat','tieude','noidung','slug_chapter','tacgia'
     ];
     protected $primaryKey = 'id';
     protected $table = 'chapter';
