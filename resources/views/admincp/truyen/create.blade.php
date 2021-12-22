@@ -41,7 +41,7 @@
                             </div>
                             <div class="form-group">
                                 <label class="mt-1" for="mota">Tóm tắt truyện</label>
-                                <textarea name="tomtat" id="" cols="30" rows="10" class="form-control">
+                                <textarea name="tomtat" id="noidung_chapter" cols="30" rows="10" class="form-control">
 
                                 </textarea>
                             </div>

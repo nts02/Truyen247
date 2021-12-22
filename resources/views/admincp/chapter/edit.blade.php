@@ -52,7 +52,7 @@
                             </div>
                             <div class="form-group">
                                 <label class="mt-1" for="mota">Nội dung</label>
-                                <textarea name="noidung" id="" cols="30" rows="10" class="form-control">
+                                <textarea name="noidung" id="noidung_chapter" cols="30" rows="10" class="form-control">
                                      {{$chapter->noidung}}
                                 </textarea>
                             </div>

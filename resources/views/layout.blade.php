@@ -4,12 +4,13 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Truyen247</title>
+    <title>TS.Truyện</title>
 
     <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <!-- Styles -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
     <link rel="stylesheet" href="{{ asset('css/owl.carousel.min.css') }}">
@@ -26,13 +27,13 @@
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item active">
                     <a class="nav-link" href="{{url('/')}}">
-                        Trang chủ <span class="sr-only"></span>
+                        <i class="fas fa-home" style="font-size: 26px"> TS.Truyện</i> <span class="sr-only"></span>
                     </a>
                 </li>
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
                        aria-haspopup="true" aria-expanded="false">
-                        Thể loại
+                        <i class="fas fa-tags" style="font-size: 26px"> Thể loại</i>
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                         @foreach($danhmuc as $key => $danh)
@@ -183,6 +184,9 @@
 <script src="{{ asset('js/app.js') }}" defer></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.0/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+<script>
+
+</script>
 <script>
     $('.owl-carousel').owlCarousel({
         loop: true,

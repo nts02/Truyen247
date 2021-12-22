@@ -2,7 +2,7 @@
 @section('content')
 
 <!--Truyện mới cập nhật -->
-<h3>Danh sách truyện</h3>
+<h3 style="text-align: center; margin-top: 10px">Danh sách truyện</h3>
 <div class="album py-5 bg-light">
     <div class="container">
         <div class="row ">

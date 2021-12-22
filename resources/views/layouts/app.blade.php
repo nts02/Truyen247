@@ -14,12 +14,14 @@
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" crossorigin="anonymous"></script>
+
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"  crossorigin="anonymous">
 </head>
 <body>
@@ -82,6 +84,10 @@
             @yield('content')
         </main>
     </div>
+    <script src="//cdn.ckeditor.com/4.17.1/full/ckeditor.js"></script>
+    <script>
+        CKEDITOR.replace('noidung_chapter');
+    </script>
     <script type="text/javascript">
 
         function ChangeToSlug()
@@ -115,9 +121,6 @@
             //In slug ra textbox có id “slug”
             document.getElementById('convert_slug').value = slug;
         }
-
-
-
 
     </script>
 </body>

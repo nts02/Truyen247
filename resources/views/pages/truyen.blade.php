@@ -2,8 +2,13 @@
 @section('content')
     <nav aria-label="breadcrumb"  >
         <ol class="breadcrumb">
-            <li class="breadcrumb-item"><a href="#">Truyện Huyền Huyễn</a></li>
-            <li class="breadcrumb-item active" aria-current="page">Nhất kiếm độc tôn</li>
+            <li class="breadcrumb-item"><a href="{{url('/')}}">Trang chủ</a></li>
+            <li class="breadcrumb-item"><a href="{{url('danh-muc/'.$truyen->danhmuctruyen->slug_danhmuc)}}">
+                    {{$truyen->danhmuctruyen->tendanhmuc}}</a>
+            </li>
+            <li class="breadcrumb-item active" aria-current="page">
+                <a href="{{url('xem-truyen/'.$truyen->slug_truyen)}}">{{$truyen->tentruyen}}</a>
+            </li>
         </ol>
     </nav>
 <div class="row">
@@ -38,15 +43,7 @@
         <hr>
         <h4>Giới thiệu</h4>
         <div class="col-md-12">
-               Sinh tử coi nhẹ, không phục liền làm.
-
-               Chư thiên thần phật tiên, không qua đến nhất kiếm !
-
-               Cảnh giới:
-               - Kiếm phân chia: Tục kiếm, linh kiếm, minh kiếm, chân kiếm, thiên kiếm, đạo kiếm, bất hủ chi kiếm...
-               - Tu luyện phân chia: Thối Thể cảnh, luyện lực cảnh, Nội Tráng cảnh, Kiêm Tu cảnh, Bất Tức cảnh, Khí Biến cảnh, Kim Thân cảnh, Ngự Khí cảnh, Lăng Không cảnh, Thông U cảnh, Thần Hợp cảnh, Vạn Pháp cảnh, chân Vạn Pháp cảnh, Ngự Pháp cảnh, chân Ngự Pháp cảnh, Phá Không cảnh, Nguyên Cảnh, Âm cảnh, Vô Thượng Chi Cảnh, Thánh cảnh, Tạo Hóa cảnh, Đạo cảnh, Thủy Đạo cảnh, Tri Đạo cảnh, Chứng Đạo cảnh, Chưởng Đạo cảnh, Thiên Đạo cảnh, Phong Đế, Thần cảnh, Chí cảnh, đỉnh phong Chí cảnh, nửa bước Đăng Phong cảnh, Đăng Phong cảnh, nữa bước Vị Tri cảnh, Vị Tri cảnh, Tạo Cực cảnh, Địa Tiên cảnh, Mệnh cảnh, Phá Mệnh cảnh, Cầu Đạo cảnh, Nhập Đạo cảnh, Phá Đạo cảnh...
-
-               - Năm Chiều: Thủy Nguyên cảnh, lập Càn Khôn, khải Âm Dương, hiểu sinh tử, phá Thiên Cơ, Minh Nhân Quả, nhập Luân Hồi...
+              {!! $truyen->tomtat !!}
         </div>
         <hr>
         <h4>Danh sách chương</h4>
@@ -65,12 +62,11 @@
         <h4>Truyện tương tự</h4>
         <div class="row">
             @foreach($cungdanhmuc as $key => $value)
-            <div class="col-md-3">
-
+            <div class="col-md-4">
                 <div class="card mb-3 shadow-sm ">
                     <img src="{{asset('public/uploads/truyen/'.$value->hinhanh)}}" >
                     <div class="card-body">
-                        <h5>{{$value->tentruyen}}</h5>
+                        <h6>{{$value->tentruyen}}</h6>
                         <div class="d-flex justify-content-between align-items-center">
                             <div class="btn-group">
                                 <a href="{{url('xem-truyen/'.$value->slug_truyen)}}" type="button" class="btn btn-sm btn-outline-secondary">Đọc truyện</a>
@@ -86,14 +82,18 @@
     <div class="col-md-3">
         <h3>Truyện đọc nhiều</h3>
         @foreach($cungdanhmuc as $key => $value)
-            <div class="">
-                <div class="card mb-3 shadow-sm ">
-                    <img src="{{asset('public/uploads/truyen/'.$value->hinhanh)}}" >
-                    <div class="card-body">
-                        <h5>{{$value->tentruyen}}</h5>
-                    </div>
+                <div class=" mb-3 ">
+                    <ul style="list-style:none">
+                        <li>
+                            <a href="{{url('xem-truyen/'.$value->slug_truyen)}}">
+                                <h4>{{$value->tentruyen}}</h4>
+                            </a>
+                            <p> Tác giả: {{$value->tacgia}} </p>
+                            <hr>
+                        </li>
+                    </ul>
                 </div>
-            </div>
+
         @endforeach
     </div>
 </div>
