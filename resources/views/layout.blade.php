@@ -22,18 +22,20 @@
 <body>
 <div class="container">
     <!--Menu -->
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <nav class="navbar navbar-expand-lg navbar-light " style="background-color: #14425d">
         <div class="collapse navbar-collapse justify-content-between" id="navbarSupportedContent">
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item active">
                     <a class="nav-link" href="{{url('/')}}">
-                        <i class="fas fa-home" style="font-size: 26px"> TS.Truyện</i> <span class="sr-only"></span>
+                        <i class="fas fa-home" style="font-size: 26px;color:#c5d7f2;"> TS.Truyện</i> <span class="sr-only"></span>
                     </a>
                 </li>
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
                        aria-haspopup="true" aria-expanded="false">
-                        <i class="fas fa-tags" style="font-size: 26px"> Thể loại</i>
+                        <i class="fas fa-tags" style="font-size: 26px ;color:#fff">
+                            Thể loại
+                        </i>
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                         @foreach($danhmuc as $key => $danh)
@@ -42,8 +44,10 @@
                     </div>
                 </li>
             </ul>
-            <form class="form-inline ml-auto my-2 my-lg-0 d-flex ">
-                <input class="form-control mr-sm-2" type="search" placeholder="Tìm tên truyện..." aria-label="Search">
+            <form class="form-inline ml-auto my-2 my-lg-0 d-flex " action="{{url('tim-kiem')}}" method="GET" autocomplete="off">
+                <input class="form-control mr-sm-2" type="search" name="tukhoa"
+                       placeholder="Tìm tên tác giả,truyện..." aria-label="Search">
+
                 <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
             </form>
         </div>
@@ -184,9 +188,32 @@
 <script src="{{ asset('js/app.js') }}" defer></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.0/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
-<script>
+{{--<script>--}}
+{{--    $('#keywords').keyup(function(){--}}
+{{--       var query = $(this).val();--}}
+{{--       if(query != '') {--}}
+{{--           var _token = $('input[name="_token"]').val();--}}
+{{--           $.ajax({--}}
+{{--               url:"{{url('/timkiem-ajax')}}",--}}
+{{--               method:"POST",--}}
+{{--               data:{keywords:keywords,_token:_token},--}}
+{{--               success:function(data){--}}
+{{--                   $('#search_ajax').fadeIn();--}}
+{{--                   $('#search_ajax').html(data);--}}
+{{--               }--}}
+{{--           })--}}
+{{--       }--}}
+{{--       else{--}}
+{{--           $('#search_ajax').fadeOut();--}}
+{{--       }--}}
+{{--    });--}}
 
-</script>
+{{--    $(document).on('click','.li_search_ajax',function(){--}}
+{{--        $('#keywords').val($(this).text());--}}
+{{--        $('#search_ajax').fadeOut();--}}
+{{--    })--}}
+
+{{--</script>--}}
 <script>
     $('.owl-carousel').owlCarousel({
         loop: true,

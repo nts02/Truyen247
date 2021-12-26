@@ -21,6 +21,9 @@ Route::get('/',[IndexController::class,'home']);
 Route::get('danh-muc/{slug}',[IndexController::class,'danhmuc']);
 Route::get('xem-truyen/{slug}',[IndexController::class,'xemtruyen']);
 Route::get('xem-chapter/{slug}',[IndexController::class,'xemchapter']);
+Route::get('tim-kiem',[IndexController::class,'timkiem']);
+Route::get('/timkiem-ajax',[IndexController::class,'timkiem_ajax']);
+
 
 Auth::routes();
 
